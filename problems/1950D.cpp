@@ -24,7 +24,7 @@ bool dfs(int x) {
         return dp[x];
 
     for (int b : binaryDecimals) {
-        if (b == 1) continue; // hindari loop tak hingga
+        if (b == 1) continue;
         if (x % b == 0) {
             if (dfs(x / b))
                 return dp[x] = true;
@@ -35,7 +35,6 @@ bool dfs(int x) {
 }
 
 int main() {
-    // Generate semua binary decimal <= 100000
     for (int i = 1; i <= 100000; i++) {
         if (isBinaryDecimal(i))
             binaryDecimals.push_back(i);
